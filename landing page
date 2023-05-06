@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        :root {
+            --black: #2f2f2f;
+            --white: #fff;
+            --red: #f83038;
+        }
+
+        .main {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(#1c1c1c, #323232);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .main::before {
+            content: 'Adventure';
+            position: absolute;
+            top: 50%;
+            transform: translate(10%, -40%);
+            font-size: 14vw;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.05);
+        }
+
+        a img {
+            height: 40px;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .logo {
+            max-width: 80px;
+        }
+
+        .navigation {
+            display: flex;
+        }
+
+        .navigation li {
+            list-style: none;
+        }
+
+        .navigation li a {
+            position: relative;
+            color: var(--white);
+            /* padding-top: -50px; */
+            margin-left: 30px;
+            text-decoration: none;
+            transition: 0.25s;
+        }
+
+        .navigation li a:hover {
+            color: var(--red);
+        }
+
+        .content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        .content img {
+            height: 200px;
+            width: 350px;
+        }
+
+        .content h3 {
+            font-size: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--red);
+            color: var(--white);
+            text-decoration: none;
+            padding: 10px 25px;
+            margin-top: 20px;
+            border-radius: 30px;
+            font-size: 1.25em;
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            letter-spacing: 3px;
+        }
+
+        .bike {
+            max-width: 80%;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 30px 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sci {
+            display: flex;
+        }
+
+        .sci li {
+            list-style: none;
+        }
+
+        .sci li a {
+            color: var(--white);
+            font-size: 1.5em;
+            margin-right: 13px;
+            transition: 0.25s;
+        }
+
+        .sci li a:hover {
+            color: var(--red);
+        }
+
+        .dots {
+            display: flex;
+        }
+
+        .dots .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .dots .dot.active {
+            background: var(--white);
+        }
+
+        .slider .slides {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 60px;
+            transition: 0.25s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .slider .slides.active {
+            opacity: 1;
+        }
+
+        .sliders .slides h3 {
+            color: var(--white);
+            font-size: 3em;
+        }
+
+        .sliders .slides:last-child h3 {
+            text-align: end;
+        }
+
+        .slider .slides h3 span {
+            color: var(--red);
+            font-size: 0.5em;
+            font-weight: 400;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <header>
+            <a href="#"> <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpM_YTIBFq71bAYu_0SBFAEKRml70D8GZWzQ&usqp=CAU"
+                    class="logo"></a>
+            <ul class="navigation">
+                <li><a href="#">Top features</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Stores</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <h3>Ready To <span>Race</span></h3>
+            <a href="#" class="btn">Ride Now</a>
+            <img src="bg.png" alt="">
+        </div>
+        <!-- Slider Content -->
+        <div class="slider">
+            <div class="slides active">
+                <h3><span>Engine</span><br>599 cc</h3>
+                <h3><span>Max Speed</span><br>260 kmph</h3>
+            </div>
+            <div class="slides">
+                <h3><span>Mileage</span><br>14kmpl</h3>
+                <h3><span>0-100 kmph</span><br>4 Seconds</h3>
+            </div>
+            <div class="slides">
+                <h3><span>Wheels</span><br>17-Inch Alloy</h3>
+                <h3><span>Tyre Type</span><br>Tubeless</h3>
+            </div>
+        </div>
+        <div class="footer">
+            <ul class="sci">
+                <li><a href="#">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a></li>
+                <li><a href="#">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                        </ion-icon>
+                    </a></li>
+                <li><a href="#">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a></li>
+            </ul>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const slides = document.querySelectorAll('.slides');
+        const dots = document.querySelectorAll('.dot');
+        function setActive(i) {
+            for(slide of slides)
+            slide.classList.remove('active');
+            slides[i].classList.add('active');
+            for(dot of dots)
+            dot.classList.remove('active');
+            dots[i].classList.add('active');
+        }
+        for(let j = 0; j < dots.length; j++) {
+            dots[j].addEventListener('click', function () {
+            setActive(j);
+            })
+        }
+    </script>
+</body>
+
+</html>
