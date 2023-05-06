@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+   *{
+      margin: 0;
+      padding:0;
+   }
+    .main{
+    background: url(https://img.freepik.com/free-photo/closeup-shot-thermometer-beach-sand_181624-12367.jpg?w=1480&t=st=1683306215~exp=1683306815~hmac=b63806cac5d3a6e6d5d6511527d6404b035a060fc4c32a6054c0d87a89cbec2e);
+    width: 220vh;
+    height:120vh;
+}
+   body{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+   input,span{
+      font-size: 20px;
+   }
+   
+</style>
+</head>
+<body>
+    <div class="main">
+        <h1>Temperature Converter</h1>
+        <h2>Type Temperature in celcius to convert it into fahrenheit</h2>
+        <p>
+        <label>Celcius</label>
+        <input id="inputKG" type="number" placeholder="Celcius"
+        oninput="CtoFConverter(this.value)" onchange="CtoFConverter(this.value)">
+        </p>
+        <p>Fahrenheit: <span class="fahrenheit"></span></p>
+        <script>
+           function CtoFConverter(temp) {
+              document.querySelector(".fahrenheit").innerHTML=(temp-32)/1.8;
+           }
+        </script>
+    </div>
+
+</body>
+</html>
